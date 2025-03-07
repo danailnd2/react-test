@@ -1,0 +1,20 @@
+.add-book-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.add-book-form .MuiCard-root {
+  width: 400px;
+}
+
+.add-book-form .MuiTextField-root {
+  margin-bottom: 1rem;
+}
+
+.add-book-form .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
