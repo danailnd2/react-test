@@ -1,15 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import useApi from "../hooks/useApi";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  IconButton,
-} from "@mui/material";
+import BookTable from "../components/BookTable"; // Import the BookTable component
+import { IconButton } from "@mui/material";
 import { AddCircle as AddCircleIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -44,33 +36,7 @@ const Main = () => {
       {error && <p>Error: {error}</p>}
 
       {books.length > 0 ? (
-        <TableContainer
-          component={Paper}
-          style={{
-            padding: "1rem",
-          }}
-        >
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <strong>Title</strong>
-                </TableCell>
-                <TableCell>
-                  <strong>Author</strong>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {books.map((book) => (
-                <TableRow key={book.id}>
-                  <TableCell>{book.title}</TableCell>
-                  <TableCell>{book.author}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <BookTable books={books} />
       ) : (
         <p>No books available</p>
       )}
