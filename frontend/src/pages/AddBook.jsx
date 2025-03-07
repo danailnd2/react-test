@@ -8,7 +8,7 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // for navigation
+import { useNavigate } from "react-router-dom";
 import useApi from "../hooks/useApi";
 import "../styles/AddBook.css";
 
@@ -33,17 +33,14 @@ const AddBook = () => {
     };
 
     try {
-      // Send POST request to add the book
       await postRequest("/books", newBook);
       console.log("Book added successfully");
 
-      // Reset form values
       setBookName("");
       setBookAuthor("");
       setBookPages("");
       setBookHasPictures(false);
 
-      // Navigate to the main page
       navigate("/");
     } catch (err) {
       console.error("Error adding book:", err);
